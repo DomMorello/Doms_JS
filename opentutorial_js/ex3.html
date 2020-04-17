@@ -6,24 +6,44 @@
       font-weight: bold;
       color:red;
     }
+    #first{
+      color:green;
+    }
+    span{
+      color:blue;
+    }
   </style>
 </head>
 <body>
+  <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if (this.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      this.value = 'day'
+    }else{
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value = 'night'
+    }
+  ">
       <h1><a href="ex1.html">WEB</a></h1>
       <h2 style="background-color:coral;color:powderblue">JavaScript</h2>
       <p>
-        <span class="js">JavaScript</span>
-        hello worldhello world<br>
-        hello worldhello world<br>
-        hello worldhello world<br>
-        hello worldhello world<br>
-        hello worldhello world<br>
-        hello worldhello world<br>
-        hello worldhello world<br>
-        hello worldhello world<br>
-        hello worldhello world<br>
-        hello worldhello world<br>
-        hello worldhello world<br>
+        <span id="first"class="js">JavaScript</span>
+        <span class="js">hell</span> worldhell world<br>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
+        <span>dkfjasdlfkjakdjf</span>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
+        <span>dashfaldkfj</span>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
+        <span class="js">hell</span> world<span class="js">hell</span> world<br>
       </p>
 </body>
 </html>
