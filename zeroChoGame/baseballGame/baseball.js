@@ -1,24 +1,31 @@
 var body = document.body;
 
-var nums = [1,2,3,4,5,6,7,8,9];
-var array = [];
+var nums;
+var array;
 
-for (var i = 0; i < 4; i += 1) {
-    var popped = nums.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
-    array.push(popped);
+function pickNumber() {
+    nums = [1,2,3,4,5,6,7,8,9];
+    array = [];
+    for (var i = 0; i < 4; i += 1) {
+        var popped = nums.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
+        array.push(popped);
+    }
 }
 
+pickNumber();
 console.log(array);
 
 var result = document.createElement('h1');
 body.append(result);
-var form = document.createElement('form');
 
+var form = document.createElement('form');
 document.body.append(form);
+
 var input = document.createElement('input');
 input.type = 'text';
 input.maxLength = 4;
 form.append(input);
+
 var button = document.createElement('button');
 button.textContent = 'input!';
 form.append(button);
@@ -31,12 +38,7 @@ form.addEventListener('submit', function (e) {
     if (answer === array.join('')) {
         result.textContent = "home run!";
         input.value = '';
-        nums = [1,2,3,4,5,6,7,8,9];
-        array = [];
-        for (var i = 0; i < 4; i += 1) {
-            var popped = nums.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
-            arrays.push(popped);
-        }
+        pickNumber();
         input.focus();
         wrong = 0;
     } else {
@@ -48,6 +50,7 @@ form.addEventListener('submit', function (e) {
             result.textContent = 'failure! the answer is ' + array.join();
             input.value = '';
             input.focus();
+            pickNumber();
         } else {
             for (var i = 0; i < 3; i += 1) {
                 if (Number(answerArr[i]) === array[i]) {
