@@ -11,4 +11,4 @@ Javascript
 - 틱택토 3목 게임 만들기
 > 2차원 배열, html노드트리 접근, forEach
 - 로또 추첨기 만들기
-> 
+> Array 객체, html 태그에 접근하기, querySelector, sort, map, js로 CSS 수정하기

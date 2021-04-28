@@ -4,10 +4,10 @@
 
 var arr = Array(45)
         .fill()
-        .map(function (elem, idx) {
+        .map(function (elem, idx) { //여기서 elem 매개변수를 제거하면 NaN으로 mapping된다.
             return idx + 1;
         });
-
+console.log(arr);
 var shuffle = [];
 while (arr.length > 0) {
     //splice는 배열을 반환한다. 여기서는 크기가 1인 배열이므로 [0]로 그 값에 접근한다.
@@ -39,7 +39,7 @@ console.log(picked.sort(function (p, c) { return p - c}), bonus);
     //자바스크립트에서 클로져 문제 때문이다. 원인은 아직 모른다.
     //반복문 안에서 비동기함수가 있을 때 문제가 발생한다.
     //그래서 그냥 1초에 한 번씩이 아니라 그냥 한 번에 출력한다.
-    
+
 //html tag id 기준으로 고르기
 var result = document.querySelector('#result');
 
