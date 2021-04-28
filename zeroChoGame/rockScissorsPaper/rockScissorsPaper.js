@@ -37,6 +37,5 @@ document.querySelectorAll('.btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
         var myChoice = this.textContent;
         console.log(myChoice, computerChoice(imgAcord));
-        
     });
 });
