@@ -56,11 +56,11 @@ document.querySelectorAll('.btn').forEach(function (btn) {
         var scoreDiff = myScore - computerScore;
         //변수를 활용해서 연산과정을 최소화하는 습관이 좋다.
         if (scoreDiff === 0) {
-            console.log('draw!');
+            window.alert('draw!');
         } else if ([-1, 2].includes(scoreDiff)) {
-            console.log('win!');
+            window.alert('win!');
         } else {
-            console.log('lose!');
+            window.alert('lose!');
         }
     });
 });
