@@ -13,4 +13,6 @@ Javascript
 - 로또 추첨기 만들기
 > Array 객체, html 태그에 접근하기, querySelector, sort, map, js로 CSS 수정하기
 - 가위바위보 게임 만들기
-> setInterval, querySelectorAll과 forEach를 이용한 addEventListener
+> setInterval, querySelectorAll과 forEach를 이용한 addEventListener, clearInterval, 변수를 활용한 리팩토링, includs
+- 지뢰찾기
+> 
