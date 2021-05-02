@@ -35,7 +35,6 @@ document.querySelector('#exec').addEventListener('click', function () {
                 var col = Array.prototype.indexOf.call(parentTr.children, e.currentTarget);
                 var row = Array.prototype.indexOf.call(parentTbody.children, parentTr);
 
-                dataset[row][col] = 1;  //0이었던 부분을 클릭하면 1로 바꿔줌으로써 반복되는 작업을 최소화함
                 //한 번 우클릭은 느낌표, 느낌표를 우클릭하면 물음표, 물음표를 우클릭하면 원래 정보 보여주기
                 if (e.currentTarget.textContent === '' || e.currentTarget.textContent === 'X') {
                     e.currentTarget.textContent = '!';
@@ -43,7 +42,7 @@ document.querySelector('#exec').addEventListener('click', function () {
                     e.currentTarget.textContent = '?';
                 } else if (e.currentTarget.textContent === '?') {
                     //지뢰는 원래대로 지뢰로 돌려주고 지뢰가 아닌 부분은 원래대로 빈칸 보여주기
-                    if (dataset[row][col] === 1) {
+                    if (dataset[row][col] === 0) {
                         e.currentTarget.textContent = '';
                     } else if (dataset[row][col] === 'X') {
                         e.currentTarget.textContent = 'X';
@@ -60,6 +59,7 @@ document.querySelector('#exec').addEventListener('click', function () {
                 e.currentTarget.classList.add('opened');    //css에 바뀔 스타일을 정의하고 여기서 클래스를 추가해줄 수 있다.
                 //지뢰를 누르면 터지고 다른 부분을 누르면 누른 위치를 두르고 있는 (around)
                 //8개 칸에 지뢰가 몇 개 있는지를 누른 칸에 숫자로 보여준다.
+
                 if (dataset[row][col] === 'X') {
                     e.currentTarget.textContent = 'Boom';
                 } else {
@@ -97,10 +97,17 @@ document.querySelector('#exec').addEventListener('click', function () {
                                 tbody.children[row + 1].children[col + 1],
                             ]);
                         }
+                        dataset[row][col] = 1;  //0이었던 부분을 클릭하면 1로 바꿔줌으로써 반복되는 작업을 최소화함
                         aroundRoom.filter(function (v) {
                             return !!v;
                         }).forEach(function (next) {
-                            next.click();
+                            var parentTr = next.parentNode;
+                            var parentTbody = next.parentNode.parentNode;
+                            var col = Array.prototype.indexOf.call(parentTr.children, next);
+                            var row = Array.prototype.indexOf.call(parentTbody.children, parentTr);
+                            if (dataset[row][col] !== 1) {
+                                next.click();
+                            }
                         });
                     }
                 }
