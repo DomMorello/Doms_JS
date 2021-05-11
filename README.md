@@ -15,4 +15,6 @@ Javascript
 - 가위바위보 게임 만들기
 > setInterval, querySelectorAll과 forEach를 이용한 addEventListener, clearInterval, 변수를 활용한 리팩토링, includs
 - 지뢰찾기
-> currenttarget, target, concat, 정적 스코프, 클로저, classList.add
+> currenttarget, target, concat, 정적 스코프, 클로저, classList.add, classList.remove, 딕셔너리 사용
+- 반응속도 테스트
+> classList.contains, user-select: none, 
