@@ -30,8 +30,7 @@ document.querySelector('#exec').addEventListener('click', function () {
             return idx;
         });
     var shuffle = [];
-    var len = array.length;
-    while (array.length > len - mine) { //mine의 개수만큼만 반복
+    while (array.length > hor * ver - mine) { //mine의 개수만큼만 반복
         var move = array.splice(Math.floor(Math.random() * array.length), 1)[0];
         shuffle.push(move);
     }
@@ -56,6 +55,7 @@ document.querySelector('#exec').addEventListener('click', function () {
                 //한 번 우클릭은 느낌표, 느낌표를 우클릭하면 물음표, 물음표를 우클릭하면 원래 정보 보여주기
                 if (e.currentTarget.textContent === '' || e.currentTarget.textContent === 'X') {
                     e.currentTarget.textContent = '!';
+                    e.currentTarget.classList.add('flag');
                     if (dataset[row][col] === codeTable.mine) {
                         dataset[row][col] = codeTable.mineFlag;
                     } else {
@@ -63,12 +63,15 @@ document.querySelector('#exec').addEventListener('click', function () {
                     }
                 } else if (e.currentTarget.textContent === '!') {
                     e.currentTarget.textContent = '?';
+                    e.currentTarget.classList.remove('flag');
+                    e.currentTarget.classList.add('question');
                     if (dataset[row][col] === codeTable.mineFlag) {
                         dataset[row][col] = codeTable.questFlag;
                     } else {
                         dataset[row][col] = codeTable.quest;
                     }
                 } else if (e.currentTarget.textContent === '?') {
+                    e.currentTarget.classList.remove('question');
                     //지뢰는 원래대로 지뢰로 돌려주고 지뢰가 아닌 부분은 원래대로 빈칸 보여주기
                     if (dataset[row][col] === codeTable.questFlag) {
                         e.currentTarget.textContent = 'X';
@@ -112,7 +115,7 @@ document.querySelector('#exec').addEventListener('click', function () {
                     }
                     //선택하는 칸 주변의 지뢰의 개수
                     var aroundNum = around.filter(function (v) {
-                        return v === codeTable.mine;
+                        return [codeTable.mine, codeTable.mineFlag, codeTable.questFlag].includes(v);
                     }).length;
                     e.currentTarget.textContent = aroundNum || '';  //aroundNum이 false이면 뒤에꺼를 써라
                     dataset[row][col] = codeTable.opened;
