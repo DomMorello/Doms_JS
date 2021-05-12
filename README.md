@@ -17,4 +17,4 @@ Javascript
 - 지뢰찾기
 > currenttarget, target, concat, 정적 스코프, 클로저, classList.add, classList.remove, 딕셔너리 사용
 - 반응속도 테스트
-> classList.contains, user-select: none, 
+> classList.contains, add, remove, user-select: none, console.time, performance.now(), clearTimeout
