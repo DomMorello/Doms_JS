@@ -18,3 +18,5 @@ Javascript
 > currenttarget, target, concat, 정적 스코프, 클로저, classList.add, classList.remove, 딕셔너리 사용
 - 반응속도 테스트
 > classList.contains, add, remove, user-select: none, console.time, performance.now(), clearTimeout
+- 카드 짝 맞추기
+> className, toggle, 클로저문제 해결, 참조와 참조관계, slice, 
