@@ -19,4 +19,4 @@ Javascript
 - 반응속도 테스트
 > classList.contains, add, remove, user-select: none, console.time, performance.now(), clearTimeout
 - 카드 짝 맞추기
-> className, toggle, 클로저문제 해결, 참조와 참조관계, slice, 
+> className, toggle, 클로저문제 해결, 참조와 참조관계, slice, JSON.parse, JSON.stringify, 깊은 복사 방법, Onject.assign
