@@ -21,4 +21,7 @@ Javascript
 - 카드 짝 맞추기
 > className, toggle, 클로저문제 해결, 참조와 참조관계, slice, JSON.parse, JSON.stringify, 깊은 복사 방법, Onject.assign, use strict, this
 - 자스스톤
-> cloneNode, 
+> cloneNode
+
+## deepdive
+> <자바스크립트 Deep Dive> 책을 공부하면서 작성하는 예제 모음.
