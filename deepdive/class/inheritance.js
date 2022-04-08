@@ -22,6 +22,5 @@ class Bird extends Animal {
 const bird = new Bird(1, 5);
 
 console.log(bird);
-console.log(bird);
 console.log(bird instanceof Bird);
 console.log(bird instanceof Animal);
